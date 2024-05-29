@@ -1,22 +1,29 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getToken } from "./apis";
+import { BookApi, getToken } from "./apis";
 import { AuthContext } from "./authContext";
 
 function Login() {
   const { auth } = useContext(AuthContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // Step 1: Import and use navigate
+  const navigate = useNavigate();
 
   const submit = async () => {
     try {
       await getToken({ auth, username, password });
-      navigate('/profile'); // Step 2: Navigate to home page on successful login
+      // BookApi({auth})
+      navigate('/profile'); 
     } catch (error) {
       console.error("error during token retrieval: ", error);
     }
   };
+
+  // useEffect(() => {
+  //   if (auth.accessToken) {
+  //     BookApi({auth})
+  //   }
+  // }, [auth.accessToken])
 
   return (
     <>
@@ -47,6 +54,7 @@ function Login() {
       </div>
       <div className="text-center">
         <Link to='/signup'>Don't Have an account? Sign up here!</Link>
+        
       </div>
     </>
   );
