@@ -2,8 +2,9 @@
 
 function App() {
   return (
-    <div className="p-5">
-      <h1>Home</h1>
+    <div className="p-5, text-center">
+      <h1 className="p-3">The Reading Nook</h1>
+      <hr />
     </div>
   )
 }
