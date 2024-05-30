@@ -52,6 +52,7 @@ export const fetchUser = ({auth}) => {
 
 
 export const BookApi = ({auth}) => {
+    // const [books, setBooks] = useState([]);
     axios({
         method: 'get',
         url: `${baseUrl}/book/`,
@@ -61,4 +62,6 @@ export const BookApi = ({auth}) => {
     }).then (response => {
         console.log('FETCH BOOK : ', response)
     }).catch(error => console.log('ERROR: ', error))
+    
 }
+

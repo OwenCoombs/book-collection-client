@@ -19,16 +19,13 @@ function Login() {
     }
   };
 
-  // useEffect(() => {
-  //   if (auth.accessToken) {
-  //     BookApi({auth})
-  //   }
-  // }, [auth.accessToken])
+ 
 
   return (
     <>
-      <div className="p-5 text-center">
-        <h1>Login</h1>
+    <div>
+      <div className="p-4 text-center">
+        <h1 id="login">Login</h1>
       </div>
       <div className="text-center">
         <input 
@@ -46,8 +43,8 @@ function Login() {
           placeholder="Enter Password"
         />
       </div>
-      <div className="text-center">
-        <button 
+      <div className="text-center p-3">
+        <button class="button-55" role="button"
           style={{marginTop: 20}}
           onClick={submit}
         >Login</button>
@@ -56,9 +53,10 @@ function Login() {
         <Link to='/signup'>Don't Have an account? Sign up here!</Link>
         
       </div>
+      </div>
     </>
   );
 }
-
+{/* <button class="button-55" role="button">Button 55</button> */}
 export default Login;
 
