@@ -42,6 +42,7 @@ function SignUp() {
     </div>
     <div className="text-center">
       <input
+      
       onChange={e => setUsername(e.target.value)} 
       value={username}
       placeholder="Enter Username"
@@ -49,6 +50,7 @@ function SignUp() {
     </div>
     <div className="text-center">
       <input
+      style={{marginTop: 20}} 
       onChange={e => setFirstName(e.target.value)} 
       value={firstName}
       placeholder="Enter First Name"
@@ -56,6 +58,7 @@ function SignUp() {
     </div>
     <div className="text-center">
       <input
+      style={{marginTop: 20}} 
       onChange={e => setLastName(e.target.value)} 
       value={lastName}
       placeholder="Enter Last Name"
@@ -63,6 +66,7 @@ function SignUp() {
     </div>
     <div className="text-center">
       <input
+      style={{marginTop: 20}} 
       onChange={e => setEmail(e.target.value)} 
       value={email}
       placeholder="Enter Email"

@@ -40,22 +40,33 @@ const NewBook = ({ onBookAdded }) => {
     return (
         <div>
             <h2>Add New Book</h2>
+            <div>
             <input 
+                style={{marginTop: 20}} 
                 onChange={e => setTitle(e.target.value)}
                 placeholder="Enter Title"
                 value={title}
             />
+            </div>
+            <div>
             <input 
+                style={{marginTop: 20}} 
                 onChange={e => setAuthor(e.target.value)}
                 placeholder="Enter Author"
                 value={author}
             />
+            </div>
+            <div>
             <input 
+                style={{marginTop: 20}} 
                 onChange={e => setGenre(e.target.value)}
                 placeholder="Enter Genre"
                 value={genre}
             />
-            <button onClick={createNewBook}>Add Book</button>
+            </div>
+            <button 
+            style={{marginTop: 20}} 
+            onClick={createNewBook}>Add Book</button>
         </div>
     );
 };
@@ -115,13 +126,15 @@ const BookList = () => {
                     {books.map((book) => (
                         <li key={book.id}>
                             <strong>{book.title}</strong> by {book.author} (Genre: {book.genre})
-                            <button onClick={() => deleteBook(book.id)}>Delete</button>
+                            <button 
+                            class="button-56" role="button"
+                            onClick={() => deleteBook(book.id)}>Delete</button>
                         </li>
                     ))}
                 </ul>
             </div>
             <div className="text-center p-3">
-                <h2>Want to add a book?</h2> <br />
+                 <br />
                 <NewBook onBookAdded={fetchBooks} />
             </div>
         </>
